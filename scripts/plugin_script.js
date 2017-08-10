@@ -20,14 +20,14 @@ header.insertBefore(container,header.childNodes[0]);
           myPlayer = new YT.Player('myPlayer', {
           height: '390',
           width: '640',
-          videoId: 'cTXannG2M94',
+          videoId: plugin_script_vars.alert,
           playerVars:{
             'autoplay':'1',
             'controls':'0',
             'modestbranding':'1',
             'showinfo': '0',
             'rel':'0',
-            'playlist':'cTXannG2M94',
+            'playlist':plugin_script_vars.alert,
             'loop': '1'
           },
           events: {

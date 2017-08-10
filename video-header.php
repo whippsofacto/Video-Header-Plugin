@@ -15,19 +15,28 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 //include '_meta-box.php';
 
 
+//make a global variable
+global $myAlert;
+
+// assign text to the variable
+$myAlert = "cTXannG2M94";
+
 function load_my_scripts() {
+  //call the variable within the load_scripts function
+  global $myAlert;
   wp_enqueue_script('plugin-script', plugins_url( '/scripts/plugin_script.js', __FILE__ ),array( 'jquery' ),false,true);
   // pass this array of elements to the javascript file
   wp_localize_script('plugin-script', 'plugin_script_vars', array(
-			'alert' => __('Hey! You have clicked the button with a var from the function loader!')
+      //add the $myAlert var to the alert key
+			'alert' => __($myAlert,'whippy')
 		)
 	);
 }
 
 function load_my_styles(){
   wp_enqueue_style('video-plugin-styles', plugins_url( '/styles/video-styles.css', __FILE__ ));
-
 }
+
 add_action('wp_enqueue_scripts','load_my_scripts');
 add_action('wp_enqueue_scripts','load_my_styles');
 
