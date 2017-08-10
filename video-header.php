@@ -14,4 +14,10 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 //register_activation_hook( __FILE__, 'db_install');
 //include '_meta-box.php';
 
+
+function load_my_scripts() {
+  wp_enqueue_script('plugin-script', plugins_url( '/scripts/plugin_script.js', __FILE__ ),array( 'jquery' ),false,true);
+}
+add_action('wp_enqueue_scripts','load_my_scripts');
+// .
 ?>
