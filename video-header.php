@@ -18,6 +18,13 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 function load_my_scripts() {
   wp_enqueue_script('plugin-script', plugins_url( '/scripts/plugin_script.js', __FILE__ ),array( 'jquery' ),false,true);
 }
+
+function load_my_styles(){
+  wp_enqueue_style('video-plugin-styles', plugins_url( '/styles/video-styles.css', __FILE__ ));
+
+}
 add_action('wp_enqueue_scripts','load_my_scripts');
+add_action('wp_enqueue_scripts','load_my_styles');
+
 // .
 ?>
