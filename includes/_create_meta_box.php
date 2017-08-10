@@ -41,6 +41,7 @@ function smashing_post_class_meta_box( $post ) { ?>
   </p>
 <?php }
 
+
 /* Save the meta box's post metadata. */
 function smashing_save_post_class_meta( $post_id, $post ) {
 
@@ -75,21 +76,4 @@ function smashing_save_post_class_meta( $post_id, $post ) {
   /* If there is no new meta value but an old value exists, delete it. */
   elseif ( '' == $new_meta_value && $meta_value )
     delete_post_meta( $post_id, $meta_key, $meta_value );
-}
-
-
-// echo out the meta info
-add_action( 'template_redirect', 'wpse_inspect_page_id' );
-function wpse_inspect_page_id() {
-    $page_id = get_queried_object_id();
-    echo $page_id;
-
-    if ( !empty( $page_id ) ) {
-
-      /* Get the custom post class. */
-      $post_class = get_post_meta( $page_id, 'smashing_post_class', true );
-
-        echo  $post_class;
-
- }
 }

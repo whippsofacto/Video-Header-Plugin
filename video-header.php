@@ -10,14 +10,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-
-
-
 //make a global variable
 global $myAlert;
 
 // assign text to the variable
-$myAlert = "cTXannG2M94";
+$myAlert = "1gk7RR5lGZI";
 
 //adding the database creation functions
 //include '_create-db.php';
@@ -26,15 +23,16 @@ $myAlert = "cTXannG2M94";
 include '_meta-box.php';
 
 
-
 function load_my_scripts() {
   //call the variable within the load_scripts function
   global $myAlert;
+  global $post_class;
+  print_r($post_class . "hello");
   wp_enqueue_script('plugin-script', plugins_url( '/scripts/plugin_script.js', __FILE__ ),array( 'jquery' ),false,true);
   // pass this array of elements to the javascript file
   wp_localize_script('plugin-script', 'plugin_script_vars', array(
       //add the $myAlert var to the alert key
-			'alert' => __($myAlert,'whippy')
+			'alert' => __($post_class,'whippy')
 		)
 	);
 }
