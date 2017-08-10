@@ -6,12 +6,19 @@ var header = document.getElementsByTagName('header')[0];
 var div = document.createElement('div');
 var container = document.createElement('div');
 
+//Asychronously Add the iFrame Api
+var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 
 // Add variable to document
 container.id="my_player_container";
 div.id = 'myPlayer';
 container.appendChild(div);
 header.insertBefore(container,header.childNodes[0]);
+
 
 // This function creates an <iframe> (and YouTube player)
 // after the API code downloads.

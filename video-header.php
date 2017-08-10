@@ -9,17 +9,20 @@ License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
-//adding the database creation functions
-//include '_create-db.php';
-//register_activation_hook( __FILE__, 'db_install');
-//include '_meta-box.php';
-
 
 //make a global variable
 global $myAlert;
 
 // assign text to the variable
 $myAlert = "cTXannG2M94";
+
+//adding the database creation functions
+//include '_create-db.php';
+//register_activation_hook( __FILE__, 'db_install');
+
+include '_meta-box.php';
+
+
 
 function load_my_scripts() {
   //call the variable within the load_scripts function
