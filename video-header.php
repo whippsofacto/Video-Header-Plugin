@@ -10,22 +10,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-//make a global variable
-global $myAlert;
-
-// assign text to the variable
-$myAlert = "1gk7RR5lGZI";
-
-//adding the database creation functions
-//include '_create-db.php';
-//register_activation_hook( __FILE__, 'db_install');
-
 include '_meta-box.php';
 
-
 function load_my_scripts() {
-  //call the variable within the load_scripts function
-  global $myAlert;
   global $post_class;
   print_r($post_class . "hello");
   wp_enqueue_script('plugin-script', plugins_url( '/scripts/plugin_script.js', __FILE__ ),array( 'jquery' ),false,true);
