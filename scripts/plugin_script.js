@@ -47,3 +47,18 @@ header.insertBefore(container,header.childNodes[0]);
 
 // add class to iframe
 jQuery('#my_player_container').addClass('wp-custom-header');
+
+/* ----------------- TEST AREA ------------------------*/
+//
+var button = document.createElement('button');
+button.innerHTML = "HELLO PUSH!";
+button.id = "pw_button";
+header.insertBefore(button,header.childNodes[0]);
+
+
+//test Vars
+jQuery(document).ready(function($) {
+	$('#pw_button').on('click', function() {
+		alert(plugin_script_vars.alert);
+	});
+});

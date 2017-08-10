@@ -17,6 +17,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 function load_my_scripts() {
   wp_enqueue_script('plugin-script', plugins_url( '/scripts/plugin_script.js', __FILE__ ),array( 'jquery' ),false,true);
+  // pass this array of elements to the javascript file
+  wp_localize_script('plugin-script', 'plugin_script_vars', array(
+			'alert' => __('Hey! You have clicked the button with a var from the function loader!')
+		)
+	);
 }
 
 function load_my_styles(){
