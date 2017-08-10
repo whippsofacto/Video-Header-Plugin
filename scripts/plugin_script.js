@@ -27,6 +27,7 @@ header.insertBefore(container,header.childNodes[0]);
             'modestbranding':'1',
             'showinfo': '0',
             'rel':'0',
+            'playlist':'cTXannG2M94',
             'loop': '1'
           },
           events: {
