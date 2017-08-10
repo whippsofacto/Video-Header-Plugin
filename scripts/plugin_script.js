@@ -1,27 +1,17 @@
 console.log("hello world from the video headers plugin");
 
 
-// 1. Create the variables
+// Create the variables
 var header = document.getElementsByTagName('header')[0];
 var div = document.createElement('div');
-var iframe = document.createElement('iframe');
-var link = document.createElement('a');
-var button = document.createElement('button');
+var container = document.createElement('div');
 
 
-/*
-iframe.setAttribute('autoplay','1');
-iframe.setAttribute('controls','0');
-iframe.setAttribute('modestbranding','1');
-iframe.setAttribute('width','1000');
-iframe.setAttribute('height','315');
-iframe.setAttribute('frameborder','0');
-iframe.setAttribute('allowfullscreen','0');
-iframe.setAttribute('src','https://www.youtube.com/embed/cTXannG2M94');
-*/
-
+// Add variable to document
+container.id="my_player_container";
 div.id = 'myPlayer';
-header.insertBefore(div,header.childNodes[0]);
+container.appendChild(div);
+header.insertBefore(container,header.childNodes[0]);
 
 // This function creates an <iframe> (and YouTube player)
 // after the API code downloads.
@@ -30,47 +20,29 @@ header.insertBefore(div,header.childNodes[0]);
           myPlayer = new YT.Player('myPlayer', {
           height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
+          videoId: 'cTXannG2M94',
           playerVars:{
             'autoplay':'1',
             'controls':'0',
             'modestbranding':'1',
             'showinfo': '0',
-            'rel':'0'
+            'rel':'0',
+            'loop': '1'
           },
           events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
           }
         });
       }
 
-  // 4. The API will call this function when the video player is ready.
-       function onPlayerReady(event) {
-         event.target.playVideo();
-       }
-       // 5. The API calls this function when the player's state changes.
-           //    The function indicates that when playing a video (state=1),
-           //    the player should play for six seconds and then stop.
-           var done = false;
-           function onPlayerStateChange(event) {
-             if (event.data == YT.PlayerState.PLAYING && !done) {
-               setTimeout(stopVideo, 6000);
-               done = true;
-             }
-           }
-           function stopVideo() {
-             myPlayer.stopVideo();
-           }
 
- // Function to map the compatibility mode jQuery to $
- (function($) {
+//   The API will call this function when the video player is ready.
+     function onPlayerReady(event) {
+       //mute the video
+       event.target.mute();
+       //play clip in highest available quality
+       event.target.setPlaybackQuality('hd720');
+     }
 
- })( jQuery ); // end of Jquery function
-
-
-/* <iframe width="560"
- *          height="315"
- *          src="https://www.youtube.com/embed/cTXannG2M94"
- *          frameborder="0" allowfullscreen>
- *           </iframe> */
+// add class to iframe
+jQuery('#my_player_container').addClass('wp-custom-header');
