@@ -36,8 +36,9 @@ function smashing_post_class_meta_box( $post ) { ?>
   <p>
     <label for="smashing-post-class"><?php _e( "Add the video number from a Youtube query string and the video will play as a header.", 'example' ); ?></label>
     <br />
-    <p>e.g. http//youtu.be/<strong>EZitd1f7zsE</strong></p>
+    <p>e.g. https//youtu.be/<strong>EZit0d107zE</strong></p>
     <p> (Paste the section in bold) </p>
+    <p> Current video: </p>
     <input class="widefat" type="text" name="smashing-post-class" id="smashing-post-class" value="<?php echo esc_attr( get_post_meta( $post->ID, 'smashing_post_class', true ) ); ?>" size="30" />
   </p>
 <?php }

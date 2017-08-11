@@ -55,7 +55,7 @@ header.insertBefore(container,header.childNodes[0]);
 // add class to iframe
 jQuery('#my_player_container').addClass('wp-custom-header');
 
-/* ----------------- TEST AREA ------------------------*/
+/* ----------------- TEST AREA ------------------------
 //
 var button = document.createElement('button');
 button.innerHTML = "HELLO PUSH!";
@@ -69,3 +69,4 @@ jQuery(document).ready(function($) {
 		alert(plugin_script_vars.alert);
 	});
 });
+*/

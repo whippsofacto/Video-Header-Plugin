@@ -14,7 +14,8 @@ include '_meta-box.php';
 
 function load_my_scripts() {
   global $post_class;
-  print_r($post_class . "hello");
+  //print for testing the value of $post_class
+  //print_r($post_class . "hello");
   wp_enqueue_script('plugin-script', plugins_url( '/scripts/plugin_script.js', __FILE__ ),array( 'jquery' ),false,true);
   // pass this array of elements to the javascript file
   wp_localize_script('plugin-script', 'plugin_script_vars', array(
