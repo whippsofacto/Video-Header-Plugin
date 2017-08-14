@@ -19,7 +19,6 @@ div.id = 'myPlayer';
 container.appendChild(div);
 header.insertBefore(container,header.childNodes[0]);
 
-
 // This function creates an <iframe> (and YouTube player)
 // after the API code downloads.
       var myPlayer;
