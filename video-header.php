@@ -16,6 +16,7 @@ function load_my_scripts() {
   global $post_class;
   //print for testing the value of $post_class
   //print_r($post_class . "hello");
+  if (!empty($post_class)){
   wp_enqueue_script('plugin-script', plugins_url( '/scripts/plugin_script.js', __FILE__ ),array( 'jquery' ),false,true);
   // pass this array of elements to the javascript file
   wp_localize_script('plugin-script', 'plugin_script_vars', array(
@@ -23,6 +24,10 @@ function load_my_scripts() {
 			'alert' => __($post_class,'whippy')
 		)
 	);
+} else {
+  wp_enqueue_script('jQuery', true ,array( 'jquery' ),false,true);
+
+}
 }
 
 function load_my_styles(){
